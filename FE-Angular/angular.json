@@ -1,17 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "0d86c73b-d56c-4102-b4aa-a8a3a050064a"
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular8": {
+    "FE-Angular": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "style": "css"
-        },
         "@schematics/angular:application": {
           "strict": true
         }
@@ -23,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular8",
+            "outputPath": "dist/FE-Angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular8:build"
+            "browserTarget": "FE-Angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular8:build:production"
+              "browserTarget": "FE-Angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular8:build"
+            "browserTarget": "FE-Angular:build"
           }
         },
         "test": {
@@ -119,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular8:serve"
+            "devServerTarget": "FE-Angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular8:serve:production"
+              "devServerTarget": "FE-Angular:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular8"
+  "defaultProject": "FE-Angular"
 }
