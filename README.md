@@ -10,23 +10,23 @@ List of Microservices
 ---------------------
 
 A. Microservices 
-	1. HomeService 
-	2. UserService 
-	3. AdminService 
-	4. HomeService 
+   -  HomeService 
+   -  UserService 
+   -  AdminService 
+   -  HomeService 
 B. Common Services
-	6. GatewayService 
-	7. EurekaSerivce 
-	8. ConfigService 
+   -  GatewayService 
+   -  EurekaSerivce 
+   -  ConfigService 
 
 **Front-end ** : Angular
 
 TABLE
 -----
-a. student->> userid, fullname, mobileno, email, userType, active
-b. course->> crsid, crsname, crstype, crsprice, active
-c. studentcoursedetails->> studcrsid, userid, crsid
-d. imagelocation>> imgid, imageLocation
+1. student->> userid, fullname, mobileno, email, userType, active
+2. course->> crsid, crsname, crstype, crsprice, active
+3. studentcoursedetails->> studcrsid, userid, crsid
+4. imagelocation>> imgid, imageLocation
 
 	
 Requirements of Functionality
@@ -38,9 +38,10 @@ Requirements of Functionality
 2. **UserService** - Note: only registered users can login to the system
 	- getallcourses
 	- searchcourse
-	- place an order for the course by select "ORDER COURSE" BUTTON
+	- place an order for the course by select "Order Course" **Button**
 
 3. **AdminService**
+
 	A. USERS
 	- addUserDetails
 	- getAllUsers
