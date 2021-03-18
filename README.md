@@ -8,14 +8,16 @@ Note: Implement this crud project using all the standard technologies available.
 	
 List of Microservices 
 ---------------------
-1. HomeService 
-2. UserService 
-3. AdminService 
-4. HomeService 
-**Common Services**
-6. GatewayService 
-7. EurekaSerivce 
-8. ConfigService 
+
+A. Microservices 
+	1. HomeService 
+	2. UserService 
+	3. AdminService 
+	4. HomeService 
+B. Common Services
+	6. GatewayService 
+	7. EurekaSerivce 
+	8. ConfigService 
 
 **Front-end ** : Angular
 
