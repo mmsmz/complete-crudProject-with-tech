@@ -1,9 +1,10 @@
-# complete-crudProject-with-tech
-Implement this crud project using all the standard technologies available. E.g. Spring Boot, Hibernate, MYSQL, Angular 8, Microservice Design Patterns.   
+# Complete-crudProject-with-implementing-technologies
 
-Application For : Student Course Registration System 
+**Application Name** : Student Course Registration System 
 
-Requirement Gethering:
+Note: Implement this crud project using all the standard technologies available. E.g. Spring Boot, Hibernate, MYSQL, Angular 8, Microservice Design Patterns.   
+
+**_Requirement Gethering_**:
 	
 List of Microservices 
 ---------------------
@@ -26,25 +27,25 @@ imagelocation>> imgid, imageLocation
 	
 Requirements of Functionality
 -----------------------------
-1. HomeService 
+1. **HomeService** 
 	- Display Course Details 
 	- Display three images of courses
 
-2. UserService 	- only registered users can login to the system***
+2. **UserService **- Note: only registered users can login to the system
 	- getallcourses
 	- searchcourse
 	- place an order for the course by select "ORDER COURSE" BUTTON
 
-3. AdminService 
-	a. USERS>>>>>>>>>>>>>>>
-	  1) addUserDetails
+3. **AdminService **
+	_1. USERS_
+	- addUserDetails
 	- getAllUsers
 	- serachUsers
 	- updateUsers
 	- deleteUsers
 	- deactivate/activate users which means users cant login to the system
 
-	b. COURSES>>>>>>>>>>>>>
+	_A. COURSES_
 	- addCourseDetails
 	- getAllCourses
 	- serachCourses
