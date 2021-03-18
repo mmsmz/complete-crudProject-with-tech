@@ -1,9 +1,9 @@
 # complete-crudProject-with-tech
-Implement this crud project using all the standard technologies available. E.g. Spring Boot, Hibernate, MYSQL, Angular 8, Microservice Patterns.   
+Implement this crud project using all the standard technologies available. E.g. Spring Boot, Hibernate, MYSQL, Angular 8, Microservice Design Patterns.   
 
 Application For : Student Course Registration System 
 
-Requirement:
+Requirement Gethering:
 	
 List of Microservices 
 ---------------------
@@ -53,8 +53,8 @@ Requirements of Functionality
 	- Accepted order the course 
 
 
-Implentation
--------------
+Additional Technologies 
+------------------------
 1. Service Discovery 
 2. API Gate way service
 3. JWT
