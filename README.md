@@ -14,6 +14,7 @@ A. Microservices
    -  UserService 
    -  AdminService 
    -  HomeService 
+   
 B. Common Services
    -  GatewayService 
    -  EurekaSerivce 
