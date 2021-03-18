@@ -26,25 +26,25 @@ imagelocation>> imgid, imageLocation
 	
 Requirements of Functionality
 -----------------------------
->> HomeService 
+1. HomeService 
 	- Display Course Details 
 	- Display three images of courses
 
->> UserService 	- only registered users can login to the system***
+2. UserService 	- only registered users can login to the system***
 	- getallcourses
 	- searchcourse
 	- place an order for the course by select "ORDER COURSE" BUTTON
 
->> AdminService 
-	USERS>>>>>>>>>>>>>>>>
-	- addUserDetails
+3. AdminService 
+	a. USERS>>>>>>>>>>>>>>>
+	  1) addUserDetails
 	- getAllUsers
 	- serachUsers
 	- updateUsers
 	- deleteUsers
 	- deactivate/activate users which means users cant login to the system
 
-	COURSES>>>>>>>>>>>>>>>>
+	b. COURSES>>>>>>>>>>>>>
 	- addCourseDetails
 	- getAllCourses
 	- serachCourses
