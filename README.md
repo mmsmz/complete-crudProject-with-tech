@@ -24,9 +24,9 @@ B. Common Services
 
 TABLE
 -----
-1. student->> userId, userName, mobileNo, email, userType, password, loginStatus
+1. user->> userId, userName, mobileNo, email, userType, password, loginStatus
 2. course->> crsid, crsname, crstype, crsprice, orderStatus
-3. studentcoursedetails->> studcrsid, userid, crsid
+3. usercoursedetails->> usercrsid, userid, crsid
 4. imagelocation>> imgid, imageLocation
 
 	
@@ -43,6 +43,7 @@ Requirements of Functionality
 	- userSelectsMultipleCourse ->> user can add multiple course into the table at once
 	- checkCourseAlreadyPurchasedByUser 
 	- orderStatus 
+	
 3. **AdminService**
 
 	A. USERS
@@ -60,6 +61,10 @@ Requirements of Functionality
 	- updateCourse ->> update course details 
 	- deleteCourse
 	- userSelectsMultipleCourse
+	
+	C. UserCourseDetails 
+	- getCoursesListByUserId ->> hibernate relationship 
+	
 
 
 Additional Technologies 
