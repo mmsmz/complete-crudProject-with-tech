@@ -24,7 +24,7 @@ B. Common Services
 
 TABLE
 -----
-1. student->> userId, userName, mobileNo, email, userType, loginStatus
+1. student->> userId, userName, mobileNo, email, userType, password, loginStatus
 2. course->> crsid, crsname, crstype, crsprice, orderStatus
 3. studentcoursedetails->> studcrsid, userid, crsid
 4. imagelocation>> imgid, imageLocation
@@ -37,11 +37,12 @@ Requirements of Functionality
 	- Display three images of courses
 
 2. **UserService** - Note: only registered users can login to the system
-	- getallcourses
-	- findByCourseId 
-	- orderCoursesByUser ->> place an order for the course by select "Order Course" **Button**
-	- orderStatus ->>  books that are available and not available (**can use the update API**)
-
+	- addUserDetails
+	- getAllCourses
+	- findByCourseId
+	- userSelectsMultipleCourse ->> user can add multiple course into the table at once
+	- checkCourseAlreadyPurchasedByUser 
+	- orderStatus 
 3. **AdminService**
 
 	A. USERS
@@ -54,12 +55,11 @@ Requirements of Functionality
 
 	B. COURSES
 	- addCourseDetails
-	- getAllCourses
+	- getAllCourses - if orderStatus is 1 then >> books are available else not available (**can use the update API to update**)
 	- findByCourseId
 	- updateCourse ->> update course details 
 	- deleteCourse
-	- orderStatus 
-	- orderCoursesByUser
+	- userSelectsMultipleCourse
 
 
 Additional Technologies 
