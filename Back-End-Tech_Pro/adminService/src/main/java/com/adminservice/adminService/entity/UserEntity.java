@@ -23,6 +23,9 @@ public class UserEntity {
     @Column(name = "usertype")
     private String userType;
 
+    @Column(name = "password")
+    private String password;
+
     @Column(name = "loginstatus")
     private Byte loginStatus;
 
@@ -64,6 +67,14 @@ public class UserEntity {
 
     public void setUserType(String userType) {
         this.userType = userType;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Byte getLoginStatus() {

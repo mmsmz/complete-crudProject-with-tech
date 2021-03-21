@@ -39,6 +39,7 @@ public class UserServiceImpl implements UserService{
         userEntity.setMobileNo(userDto.getMobileNo());
         userEntity.setEmail(userDto.getEmail());
         userEntity.setUserType(userDto.getUserType());
+        userEntity.setPassword(userDto.getPassword());
         userEntity.setLoginStatus((byte) 1); // static
         userRepository.save(userEntity);
         return UserCommon.INSERTED;
