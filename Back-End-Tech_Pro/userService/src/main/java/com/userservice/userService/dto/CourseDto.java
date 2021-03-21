@@ -47,5 +47,4 @@ public class CourseDto {
     public void setOrderStatus(Byte orderStatus) {
         this.orderStatus = orderStatus;
     }
-
 }

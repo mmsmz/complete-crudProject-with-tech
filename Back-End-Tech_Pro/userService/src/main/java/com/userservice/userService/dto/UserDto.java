@@ -7,6 +7,7 @@ public class UserDto {
     private String mobileNo;
     private String email;
     private String userType;
+    private String password;
     private Byte loginStatus;
 
     public Integer getUserId() {
@@ -47,6 +48,14 @@ public class UserDto {
 
     public void setUserType(String userType) {
         this.userType = userType;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Byte getLoginStatus() {

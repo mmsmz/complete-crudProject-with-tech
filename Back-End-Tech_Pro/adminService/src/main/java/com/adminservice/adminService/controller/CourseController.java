@@ -32,7 +32,6 @@ public class CourseController {
         ResponseDto responseDto = new ResponseDto();
         responseDto.setMessage(AdminCommon.SUCCESS);
         responseDto.setData(courseService.getAllCourses());
-
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 

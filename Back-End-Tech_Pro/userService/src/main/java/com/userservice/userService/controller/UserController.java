@@ -1,6 +1,8 @@
 package com.userservice.userService.controller;
 
+import com.userservice.userService.dto.CourseDto;
 import com.userservice.userService.dto.ResponseDto;
+import com.userservice.userService.dto.UserCourseDto;
 import com.userservice.userService.dto.UserDto;
 import com.userservice.userService.service.UserService;
 import com.userservice.userService.util.UserCommon;
@@ -9,8 +11,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 @RestController
-@RequestMapping("/adminService/User")
+@RequestMapping("/userService/user")
 public class UserController {
 
     @Autowired
@@ -26,48 +32,35 @@ public class UserController {
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 
-    @RequestMapping(name = "/getAllUsers", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<ResponseDto> getAllUsers(){
+
+    @RequestMapping(name = "/getAllCourses", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<ResponseDto> getAllCourses(){
 
         ResponseDto responseDto = new ResponseDto();
         responseDto.setMessage(UserCommon.SUCCESS);
-        responseDto.setData(userService.getAllUsers());
+        responseDto.setData(userService.getAllCourses());
 
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/findByUserId", produces = "application/json")
-    public ResponseEntity<ResponseDto> findByUserId(@RequestParam Integer userid){
+    @GetMapping(value = "/findByCourseId", produces = "application/json")
+    public ResponseEntity<ResponseDto> findByCourseId(@RequestParam Integer courseId){
 
         ResponseDto responseDto = new ResponseDto();
         responseDto.setMessage(UserCommon.SUCCESS);
-        responseDto.setData(userService.findByUserId(userid));
+        responseDto.setData(userService.findByCourseId(courseId));
 
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 
-    @PutMapping(value = "/updateUser", produces = "application/json")
-    public ResponseEntity<ResponseDto> updateUser(@RequestBody UserDto userDto) {
-        ResponseDto responseDTO = new ResponseDto();
-        responseDTO.setMessage("Success");
-        responseDTO.setData(userService.updateUser(userDto));
-        return new ResponseEntity<>(responseDTO, HttpStatus.OK);
-    }
+    @PostMapping("/userSelectsMultipleCourse")
+    public ResponseEntity<ResponseDto> userSelectsMultipleCourse(@RequestParam Integer userId, @RequestBody UserCourseDto courseList){
 
-    @DeleteMapping(value = "/deleteUser", produces = "application/json")
-    public ResponseEntity<ResponseDto> deleteUser(@RequestParam Integer userid) {
-        ResponseDto responseDTO = new ResponseDto();
-        responseDTO.setMessage("Success");
-        responseDTO.setData(userService.deleteUser(userid));
-        return new ResponseEntity<>(responseDTO, HttpStatus.OK);
-    }
+        ResponseDto responseDto = new ResponseDto();
+        responseDto.setMessage(UserCommon.SUCCESS);
 
-    @PutMapping(value = "/updateLoginStatus", produces = "application/json")
-    public ResponseEntity<ResponseDto> updateLoginStatus(@RequestParam Integer userId, Byte loginStatus) {
-        ResponseDto responseDTO = new ResponseDto();
-        responseDTO.setMessage("Success");
-        responseDTO.setData(userService.updateLoginStatus(userId, loginStatus));
-        return new ResponseEntity<>(responseDTO, HttpStatus.OK);
+        responseDto.setData(userService.userSelectsMultipleCourse(userId,courseList));
+        return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 
 }
