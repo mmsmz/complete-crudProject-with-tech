@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("adminService")
+@RequestMapping("/adminService/User")
 public class UserController {
 
    //Implementing the following APIs

@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
     public List<UserDto> getAllUsers() {
 
         List<UserEntity> userEntity = userRepository.findAll();
-        List<UserDto> userDtos = new ArrayList<>();
+        List<UserDto> userList = new ArrayList<>();
 
         try {
             for (UserEntity users : userEntity) {
@@ -45,14 +45,14 @@ public class UserServiceImpl implements UserService {
                 userDto.setEmail(users.getEmail());
                 userDto.setUserType(users.getUserType());
                 userDto.setLoginStatus(users.getLoginStatus());
-                userDtos.add(userDto);
+                userList.add(userDto);
 
             }
         } catch (Exception e) {
             e.getMessage();
         }
 
-        return userDtos;
+        return userList;
     }
 
     @Override
@@ -106,15 +106,15 @@ public class UserServiceImpl implements UserService {
 
         UserEntity userEntity = userRepository.findById(userId).get();
 
-        UserEntity userDto = new UserEntity();
-        userDto.setUserId(userEntity.getUserId());
-        userDto.setUserName(userEntity.getUserName());
-        userDto.setMobileNo(userEntity.getMobileNo());
-        userDto.setEmail(userEntity.getEmail());
-        userDto.setUserType(userEntity.getUserType());
-        userDto.setLoginStatus(loginStatus);
+        UserEntity user = new UserEntity();
+        user.setUserId(userEntity.getUserId());
+        user.setUserName(userEntity.getUserName());
+        user.setMobileNo(userEntity.getMobileNo());
+        user.setEmail(userEntity.getEmail());
+        user.setUserType(userEntity.getUserType());
+        user.setLoginStatus(loginStatus);
 
-        userRepository.save(userDto);
+        userRepository.save(user);
         return AdminCommon.LOGINSTATUS;
     }
 
