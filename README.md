@@ -38,8 +38,9 @@ Requirements of Functionality
 
 2. **UserService** - Note: only registered users can login to the system
 	- getallcourses
-	- searchcourse
-	- place an order for the course by select "Order Course" **Button**
+	- findByCourseId 
+	- courseorderByUser ->> place an order for the course by select "Order Course" **Button**
+	- 
 
 3. **AdminService**
 
@@ -49,15 +50,16 @@ Requirements of Functionality
 	- findByUserId
 	- updateUser
 	- deleteUser
-	- updateLoginStatus - deactivate/activate users which means users cant login to the system
+	- updateLoginStatus ->> deactivate/activate users which means users cant login to the system
 
 	B. COURSES
 	- addCourseDetails
 	- getAllCourses
 	- findByCourseId
-	- updateCourse
+	- updateCourse ->> update course details 
 	- deleteCourse
-	- Accepted order the course 
+	- orderStatus -  books that are available and not available (**can use the update API**)
+	- orderCourseByUser
 
 
 Additional Technologies 
