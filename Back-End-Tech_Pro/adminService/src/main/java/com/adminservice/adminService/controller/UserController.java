@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("adminService")
 public class UserController {
 
-   //Implmenting the following APIs
+   //Implementing the following APIs
     /*   addUserDetails
          getAllUsers
          findByUserId
          updateUsers
          deleteUsers
-        updateLoginStatus  deactivate/activate users which means users cant login to the system */
+         updateLoginStatus  : deactivate/activate users which means users cant login to the system */
 
     @Autowired
     private UserService userService;
@@ -72,7 +72,7 @@ public class UserController {
     }
 
     @PutMapping(value = "/updateLoginStatus", produces = "application/json")
-    public ResponseEntity<ResponseDto> updateLoginStatus(@RequestParam Integer userId, Integer loginStatus) {
+    public ResponseEntity<ResponseDto> updateLoginStatus(@RequestParam Integer userId, Byte loginStatus) {
         ResponseDto responseDTO = new ResponseDto();
         responseDTO.setMessage("Success");
         responseDTO.setData(userService.updateLoginStatus(userId, loginStatus));

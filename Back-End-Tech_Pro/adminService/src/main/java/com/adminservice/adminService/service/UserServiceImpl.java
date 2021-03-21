@@ -19,18 +19,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public String addUserDetails(UserDto userDto) {
 
-
         UserEntity userEntity = new UserEntity();
         userEntity.setUserId(userDto.getUserId());
         userEntity.setUserName(userDto.getUserName());
         userEntity.setMobileNo(userDto.getMobileNo());
         userEntity.setEmail(userDto.getEmail());
         userEntity.setUserType(userDto.getUserType());
-        userEntity.setLoginStatus(1);
+        userEntity.setLoginStatus((byte) 1); // static
         userRepository.save(userEntity);
         return AdminCommon.INSERTED;
-
-
     }
 
     @Override
@@ -94,27 +91,30 @@ public class UserServiceImpl implements UserService {
         UserEntity userEntity = userRepository.findById(userId).get();
         UserDto userDto = new UserDto();
         userDto.setUserId(userEntity.getUserId());
-        userDto.setUserName(userEntity.getUserName());
-        userDto.setMobileNo(userEntity.getMobileNo());
-        userDto.setEmail(userEntity.getEmail());
-        userDto.setUserType(userEntity.getUserType());
-        userDto.setLoginStatus(userEntity.getLoginStatus());
+//        userDto.setUserName(userEntity.getUserName());
+//        userDto.setMobileNo(userEntity.getMobileNo());
+//        userDto.setEmail(userEntity.getEmail());
+//        userDto.setUserType(userEntity.getUserType());
+//        userDto.setLoginStatus(userEntity.getLoginStatus());
         userRepository.delete(userEntity);
 
         return AdminCommon.DELETED;
     }
 
     @Override
-    public String updateLoginStatus(Integer userId, Integer loginStatus) {
+    public String updateLoginStatus(Integer userId, Byte loginStatus) {
 
         UserEntity userEntity = userRepository.findById(userId).get();
-        UserEntity user = new UserEntity();
 
-        user.setLoginStatus(loginStatus);
+        UserEntity userDto = new UserEntity();
+        userDto.setUserId(userEntity.getUserId());
+        userDto.setUserName(userEntity.getUserName());
+        userDto.setMobileNo(userEntity.getMobileNo());
+        userDto.setEmail(userEntity.getEmail());
+        userDto.setUserType(userEntity.getUserType());
+        userDto.setLoginStatus(loginStatus);
 
-
-
-        userRepository.save(user);
+        userRepository.save(userDto);
         return AdminCommon.LOGINSTATUS;
     }
 

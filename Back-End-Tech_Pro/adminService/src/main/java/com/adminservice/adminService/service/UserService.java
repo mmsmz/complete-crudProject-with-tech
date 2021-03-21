@@ -18,6 +18,6 @@ public interface UserService {
 
     String deleteUser(Integer userId);
 
-    String updateLoginStatus(Integer userId, Integer loginStatus);
+    String updateLoginStatus(Integer userId, Byte loginStatus);
 
 }

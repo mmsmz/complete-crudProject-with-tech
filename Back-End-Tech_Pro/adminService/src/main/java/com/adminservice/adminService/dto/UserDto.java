@@ -7,7 +7,7 @@ public class UserDto {
     private String mobileNo;
     private String email;
     private String userType;
-    private int loginStatus;
+    private Byte loginStatus;
 
     public Integer getUserId() {
         return userId;
@@ -49,11 +49,11 @@ public class UserDto {
         this.userType = userType;
     }
 
-    public int getLoginStatus() {
+    public Byte getLoginStatus() {
         return loginStatus;
     }
 
-    public void setLoginStatus(int loginStatus) {
+    public void setLoginStatus(Byte loginStatus) {
         this.loginStatus = loginStatus;
     }
 }

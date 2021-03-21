@@ -24,8 +24,8 @@ B. Common Services
 
 TABLE
 -----
-1. student->> userid, fullname, mobileno, email, userType, active
-2. course->> crsid, crsname, crstype, crsprice, active
+1. student->> userId, userName, mobileNo, email, userType, loginStatus
+2. course->> crsid, crsname, crstype, crsprice, orderStatus
 3. studentcoursedetails->> studcrsid, userid, crsid
 4. imagelocation>> imgid, imageLocation
 
@@ -46,17 +46,17 @@ Requirements of Functionality
 	A. USERS
 	- addUserDetails
 	- getAllUsers
-	- serachUsers
-	- updateUsers
-	- deleteUsers
-	- deactivate/activate users which means users cant login to the system
+	- findByUserId
+	- updateUser
+	- deleteUser
+	- updateLoginStatus - deactivate/activate users which means users cant login to the system
 
 	B. COURSES
 	- addCourseDetails
 	- getAllCourses
-	- serachCourses
-	- updateCourses
-	- deleteCourses
+	- findByCourseId
+	- updateCourse
+	- deleteCourse
 	- Accepted order the course 
 
 

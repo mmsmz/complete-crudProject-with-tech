@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class UserEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userid")
     private Integer userId;
 
@@ -24,7 +24,7 @@ public class UserEntity {
     private String userType;
 
     @Column(name = "loginstatus")
-    private int loginStatus;
+    private Byte loginStatus;
 
     public Integer getUserId() {
         return userId;
@@ -66,11 +66,11 @@ public class UserEntity {
         this.userType = userType;
     }
 
-    public int getLoginStatus() {
+    public Byte getLoginStatus() {
         return loginStatus;
     }
 
-    public void setLoginStatus(int loginStatus) {
+    public void setLoginStatus(Byte loginStatus) {
         this.loginStatus = loginStatus;
     }
 }
