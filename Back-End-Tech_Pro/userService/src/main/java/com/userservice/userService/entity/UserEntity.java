@@ -1,7 +1,6 @@
 package com.userservice.userService.entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -84,4 +83,5 @@ public class UserEntity {
     public void setLoginStatus(Byte loginStatus) {
         this.loginStatus = loginStatus;
     }
+
 }

@@ -1,0 +1,13 @@
+{
+    "message": "Success",
+    "data": [
+        {
+            "userId": 1,
+            "name": "fazith"
+        },
+        {
+            "userId": 2,
+            "name": "yowsif"
+        }
+    ]
+}

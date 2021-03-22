@@ -9,16 +9,20 @@ import { DashboardService } from './dashboard.service';
 export class DashboardComponent implements OnInit {
 
   userTable:any = [];
-  
-  constructor(private dashBoard: DashboardService) { 
-    
-  }
+
+  constructor(private dashBoard: DashboardService) {  }
 
   ngOnInit(): void {
     
     this.dashBoard.getAllCourses().subscribe(res=>{
       this.userTable = res.data;
     })
+
+    this.dashBoard.getAllImageLocation().subscribe(res=>{
+    })
+    
   }
+
+  
 
 }

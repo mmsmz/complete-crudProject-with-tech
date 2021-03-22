@@ -16,7 +16,6 @@ public class HomeController {
     @Autowired
     private HomeService homeService;
 
-
     @RequestMapping(name = "/getAllImageLocation", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<ResponseDTO> getAllImageLocation(){
 
@@ -36,7 +35,5 @@ public class HomeController {
 
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
-
-
 
 }

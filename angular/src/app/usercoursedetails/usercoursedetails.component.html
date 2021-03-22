@@ -1,0 +1,63 @@
+<app-menu></app-menu>
+<h1>Student  Course Details</h1>
+<div class="container">
+    <div class="row">
+      <h6>Search by ID</h6>
+        <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-inline">
+          <div class="form-group">
+            <label for="exampleInputUserID" class="lable-control">UserId</label>
+            <input type="email" class="form-control-id" id="exampleInputUserID" placeholder="userId" formControlName="userId">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputCourseID" class="lable-control">CourseId</label>
+            <input type="text" class="form-control" id="exampleInputCourseID" placeholder="courseId" formControlName="courseId">
+          </div>
+          <button ng-click="onSubmit()" class="btn btn-primary">Submit Or search</button>
+      
+        </form>     
+    </div>
+  
+    <div class="user-table">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Course ID</th>
+              <th scope="col">Course Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+        <tbody>
+            <tr *ngFor="let td of userTable">
+              <td>{{td.courseID}}</td>
+              <td>{{td.courseName}}</td>
+              <td>{{td.coursePrice}}</td>
+              <td class="update" (click)="UpdateUSer(td)"> <button type="button" class="btn btn-primary">update</button> </td>
+              <td (click)="delete(td)"> <button type="button" class="btn btn-primary">delete</button> </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div [hidden]="hideUserDetails" class="update-user-detail" *ngIf="updateUser">
+      <button type="button" class="close" (click)="close()">&times;</button>
+      <!-- <span  class="closebtn pull-right" (click)="closeIcone()"><i class="fa fa-times"></i></span> -->
+      <form  [formGroup]="updateUserDetails" (ngSubmit)="onUpdate()" class="update-form">
+         <div class="form-group row row-update">
+          <div class="form-group">
+            <label for="exampleInputUserID" class="lable-control">ID</label>
+            <input type="email" class="form-control" id="exampleInputUserID" placeholder="update userID" formControlName="userId">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputCourseID" class="lable-control">Enter CourseId</label>
+            <input type="text" class="form-control" id="exampleInputCourseID" placeholder="update courseID" formControlName="courseId">
+          </div>
+          <button type="submit" class="btn btn-primary btn-ubdate-submuit">update</button>
+        </div>
+      </form>
+    </div>
+    <div class="black-drops" *ngIf="updateUser"></div>
+  </div>
+
+

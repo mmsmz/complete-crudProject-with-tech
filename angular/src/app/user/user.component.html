@@ -1,0 +1,70 @@
+<app-menu></app-menu>
+<h1>Student  Details</h1>
+<div class="container">
+    <div class="row">
+      <h6>Search by ID</h6>
+        <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-inline">
+          <div class="form-group">
+            <label for="exampleInputEmail1" class="lable-control">ID</label>
+            <input type="email" class="form-control-id" id="exampleInputEmail1" placeholder="Id" formControlName="userId">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1" class="lable-control">Student Name</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="username" formControlName="username">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail" class="lable-control">Email</label>
+            <input type="text" class="form-control" id="exampleInputEmail" placeholder="email" formControlName="email">
+          </div>
+          <button ng-click="onSubmit()" class="btn btn-primary">Submit Or search</button>
+        </form>     
+    </div>
+  
+    <div class="user-table">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+        <tbody>
+            <tr *ngFor="let td of userTable">
+              <td>{{td.userId}}</td>
+              <td>{{td.username}}</td>
+              <td>{{td.email}}</td>
+              <td class="update" (click)="UpdateUSer(td)"> <button type="button" class="btn btn-primary">update</button> </td>
+              <td (click)="delete(td)"> <button type="button" class="btn btn-primary">delete</button> </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div [hidden]="hideUserDetails" class="update-user-detail" *ngIf="updateUser">
+      <button type="button" class="close" (click)="close()">&times;</button>
+      <!-- <span  class="closebtn pull-right" (click)="closeIcone()"><i class="fa fa-times"></i></span> -->
+      <form  [formGroup]="updateUserDetails" (ngSubmit)="onUpdate()" class="update-form">
+         <div class="form-group row row-update">
+          <div class="form-group">
+            <label for="exampleInputEmail1" class="lable-control">ID</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="update Id" formControlName="userId">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1" class="lable-control">username</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="update Username" formControlName="username">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail" class="lable-control">email</label>
+            <input type="text" class="form-control" id="exampleInputEmail" placeholder="update email" formControlName="email">
+          </div>
+          <button type="submit" class="btn btn-primary btn-ubdate-submuit">update</button>
+        </div>
+      </form>
+    </div>
+    <div class="black-drops" *ngIf="updateUser"></div>
+  </div>
+
+

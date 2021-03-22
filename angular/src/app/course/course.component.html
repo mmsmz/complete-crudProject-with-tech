@@ -1,0 +1,72 @@
+<app-menu></app-menu>
+<h1> Course Details</h1>
+<div class="container">
+    <div class="row">
+      <h6>Search by ID</h6>
+        <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-inline">
+          <div class="form-group">
+            <label for="exampleInputEmail1" class="lable-control">Course ID</label>
+            <input type="email" class="form-control-id" id="exampleInputEmail1"  placeholder="Id" formControlName="courseID">
+    
+          </div>
+          <div class="form-group">
+            <label for="courseDetails" class="lable-control">Course Name</label>
+            <input type="text" class="form-control" id="courseDetails" placeholder="Name" formControlName="courseName">
+          </div>
+         
+          <div class="form-group">
+            <label for="coursePrice" class="lable-control">Course Price</label>
+            <input type="text" class="form-control" id="coursePrice" placeholder="Price" formControlName="coursePrice">
+          </div>
+
+          <button ng-click="onSubmit()" class="btn btn-primary">Submit Or search</button>
+        </form>
+     
+    </div>
+  
+    <div class="user-table">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Course Name</th>
+              <th scope="col">Course Price</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+        <tbody>
+            <tr *ngFor="let td of userTable">
+              <td>{{td.courseID}}</td>
+              <td>{{td.courseName}}</td>
+              <td>{{td.coursePrice}}</td>
+              <td class="update" (click)="UpdateCourse(td)"> <button type="button" class="btn btn-primary">update</button> </td>
+              <td (click)="delete(td)"> <button type="button" class="btn btn-primary">delete</button> </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div [hidden]="hideUserDetails" class="update-user-detail" *ngIf="updateCourse">
+      <button type="button" class="close" (click)="close()">&times;</button>
+    
+      <form  [formGroup]="updateCourseDetails" (ngSubmit)="onUpdate()" class="update-form">
+         <div class="form-group row row-update">
+          <div class="form-group">
+            <label for="exampleInputEmail1" class="lable-control">ID</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" formControlName="courseId"  placeholder="update Id">
+          </div>
+          <div class="form-group">
+            <label for="courseDetails" class="lable-control">username</label>
+            <input type="text" class="form-control" id="courseDetails" placeholder="update Username" formControlName="courseName">
+          </div>
+          <div class="form-group">
+            <label for="coursePrice" class="lable-control">coursePrice</label>
+            <input type="text" class="form-control" id="coursePrice" placeholder="update price" formControlName="coursePrice">
+          </div>
+          <button type="submit" class="btn btn-primary btn-ubdate-submuit">update</button>
+        </div>
+      </form>
+    </div>
+    <div class="black-drops" *ngIf="updateCourse"></div>
+  </div>

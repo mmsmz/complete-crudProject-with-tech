@@ -1,0 +1,20 @@
+{
+    "message": "Success",
+    "data": [
+      {
+        "courseID": 1,
+        "courseName": "strings",
+        "coursePrice": 15410
+      },
+      {
+        "courseID": 2,
+        "courseName": "FADS",
+        "coursePrice": 123456
+      },
+      {
+        "courseID": 3,
+        "courseName": "FDSAD",
+        "coursePrice": 798456
+      }
+    ]
+  }
