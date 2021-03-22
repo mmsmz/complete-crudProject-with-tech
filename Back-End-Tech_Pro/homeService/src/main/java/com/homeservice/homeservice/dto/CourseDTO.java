@@ -8,9 +8,9 @@ public class CourseDTO {
 
     private String courseType;
 
-    private double coursePrice;
+    private Double coursePrice;
 
-    private byte active;
+    private Byte orderstatus;
 
     public Integer getCourseId() {
         return courseId;
@@ -36,19 +36,19 @@ public class CourseDTO {
         this.courseType = courseType;
     }
 
-    public double getCoursePrice() {
+    public Double getCoursePrice() {
         return coursePrice;
     }
 
-    public void setCoursePrice(double coursePrice) {
+    public void setCoursePrice(Double coursePrice) {
         this.coursePrice = coursePrice;
     }
 
-    public byte getActive() {
-        return active;
+    public Byte getOrderstatus() {
+        return orderstatus;
     }
 
-    public void setActive(byte active) {
-        this.active = active;
+    public void setOrderstatus(Byte orderstatus) {
+        this.orderstatus = orderstatus;
     }
 }

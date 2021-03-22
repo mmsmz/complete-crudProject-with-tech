@@ -20,10 +20,10 @@ public class CourseEntity {
     private String courseType;
 
     @Column(name="courseprice")
-    private double coursePrice;
+    private Double coursePrice;
 
-    @Column(name="active")
-    private byte active;
+    @Column(name="orderstatus")
+    private Byte orderstatus;
 
 
     public Integer getCourseId() {
@@ -58,11 +58,15 @@ public class CourseEntity {
         this.coursePrice = coursePrice;
     }
 
-    public byte getActive() {
-        return active;
+    public void setCoursePrice(Double coursePrice) {
+        this.coursePrice = coursePrice;
     }
 
-    public void setActive(byte active) {
-        this.active = active;
+    public Byte getOrderstatus() {
+        return orderstatus;
+    }
+
+    public void setOrderstatus(Byte orderstatus) {
+        this.orderstatus = orderstatus;
     }
 }
