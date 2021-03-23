@@ -22,7 +22,7 @@ export class UserService {
     let username = localStorage.getItem('username');
     let password = localStorage.getItem('password');
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username+":"+password)});
-    return this.http.put("http://localhost:8071/adminService/user/updateUser",data,{headers}).pipe(
+    return this.http.put("http://localhost:8071/adminService/updateUser",data,{headers}).pipe(
       map((res:any)=> res));
   }
 

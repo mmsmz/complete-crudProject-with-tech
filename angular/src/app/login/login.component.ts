@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-login',
@@ -41,16 +42,24 @@ export class LoginComponent implements OnInit {
       this.successMessage = 'Login Successful.';
       localStorage.setItem('username',this.username);
       localStorage.setItem('password',this.password);
+
       if(result == "[ADMIN]"){
-       this.router.navigate(['/user']);
+        this.router.navigate(['/hom']);
+      } else if(result == "[USER]"){ 
+        // this.router.navigate(['/manage']);
+      } else if(result == "general"){
+        // this.router.navigate(['/general'])
       }
-      else if(result == "[USER]"){
-      this.router.navigate(['/course']);
-      }
+      // if(result == "[ADMIN]"){
+      //  this.router.navigate(['/admin-home']);
+      // }
+      // else if(result == "[USER]"){
+      // this.router.navigate(['/course']);
+      // }
+
     }, () => {
       this.invalidLogin = true;
       this.loginSuccess = false;
-      
     });      
   } 
 
