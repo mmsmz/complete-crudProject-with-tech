@@ -11,7 +11,7 @@ import { UsercoursedetailsComponent } from './usercoursedetails/usercoursedetail
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
 import { CourseComponent } from './course/course.component';
-import { AdminComponent } from './admin/admin.component';
+
 
 @NgModule({
   declarations: [
@@ -21,8 +21,7 @@ import { AdminComponent } from './admin/admin.component';
     LoginComponent,
     MenuComponent,
     UsercoursedetailsComponent,
-    DashboardComponent,
-    AdminComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
