@@ -19,17 +19,16 @@ export class AppService {
 // public password: String;
   
   constructor(private http: HttpClient,
-              private rout: Router) { }
+              private router: Router) { }
 
   // public login(username:string, password:string){
   //   const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username+ ":" + password) });
   //   return  this.http.get("http://localhost:8087/", {headers, responseType: 'text' as 'json'});
   // }  
 
-  authenticationService(username: String, password: String) {
+  authenticationService(username: String, password: String) {    
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username+ ":" + password) });
-    
-    return  this.http.get("http://localhost:8087/", {headers, responseType: 'text' as 'json'});
+    return  this.http.get("http://localhost:8071/", {headers, responseType: 'text' as 'json'});
   }
 
    logout() {
@@ -38,7 +37,7 @@ export class AppService {
     // this.username = null;
     // this.password = null;
     
-    this.rout.navigateByUrl('/login');
+    this.router.navigateByUrl('/login');
     debugger
    }
 

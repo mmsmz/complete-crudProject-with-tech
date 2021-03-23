@@ -36,4 +36,6 @@ public class HomeController {
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
+    // email registration
+
 }

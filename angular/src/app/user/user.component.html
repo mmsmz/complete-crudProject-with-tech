@@ -2,21 +2,34 @@
 <h1>Student  Details</h1>
 <div class="container">
     <div class="row">
-      <h6>Search by ID</h6>
         <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-inline">
+
           <div class="form-group">
-            <label for="exampleInputEmail1" class="lable-control">ID</label>
-            <input type="email" class="form-control-id" id="exampleInputEmail1" placeholder="Id" formControlName="userId">
+            <label for="exampleInputUserId" class="lable-control">ID</label>
+            <input type="email" class="form-control-id" id="exampleInputUserId" placeholder="Id" formControlName="userId">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1" class="lable-control">Student Name</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="username" formControlName="username">
+            <label for="exampleInputUserName" class="lable-control">Student Name</label>
+            <input type="text" class="form-control" id="exampleInputUserName" placeholder="username" formControlName="userName">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputMobileNo" class="lable-control">Mobile No</label>
+            <input type="text" class="form-control" id="exampleInputMobileNo" placeholder="mobileno" formControlName="mobileNo">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail" class="lable-control">Email</label>
             <input type="text" class="form-control" id="exampleInputEmail" placeholder="email" formControlName="email">
           </div>
+          <div class="form-group">
+            <label for="exampleInputUserType" class="lable-control">UserType</label>
+            <input type="text" class="form-control" id="exampleInputUserType" placeholder="userType" formControlName="userType">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputUserType" class="lable-control">UserType</label>
+            <input type="text" class="form-control" id="exampleInputUserType" placeholder="userType" formControlName="userType">
+          </div>
           <button ng-click="onSubmit()" class="btn btn-primary">Submit Or search</button>
+        
         </form>     
     </div>
   
@@ -26,6 +39,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Full Name</th>
+              <th scope="col">Mobile No</th>
               <th scope="col">Email</th>
               <th scope="col">Last</th>
               <th scope="col">Handle</th>
@@ -34,8 +48,11 @@
         <tbody>
             <tr *ngFor="let td of userTable">
               <td>{{td.userId}}</td>
-              <td>{{td.username}}</td>
+              <td>{{td.userName}}</td>
+              <td>{{td.mobileNo}}</td>
               <td>{{td.email}}</td>
+              <td>{{td.userType}}</td>
+              <td>{{td.password}}</td>
               <td class="update" (click)="UpdateUSer(td)"> <button type="button" class="btn btn-primary">update</button> </td>
               <td (click)="delete(td)"> <button type="button" class="btn btn-primary">delete</button> </td>
             </tr>
@@ -49,16 +66,24 @@
       <form  [formGroup]="updateUserDetails" (ngSubmit)="onUpdate()" class="update-form">
          <div class="form-group row row-update">
           <div class="form-group">
-            <label for="exampleInputEmail1" class="lable-control">ID</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="update Id" formControlName="userId">
+            <label for="exampleInputUserId" class="lable-control">ID</label>
+            <input type="email" class="form-control" id="exampleInputUserId" placeholder="update Id" formControlName="userId">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1" class="lable-control">username</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="update Username" formControlName="username">
+            <label for="exampleInputUserName" class="lable-control">username</label>
+            <input type="text" class="form-control" id="exampleInputUserName" placeholder="update Username" formControlName="username">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputMobileNo" class="lable-control">Mobile no</label>
+            <input type="text" class="form-control" id="exampleInputMobileNo" placeholder="update mobile no" formControlName="mobileno">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail" class="lable-control">email</label>
             <input type="text" class="form-control" id="exampleInputEmail" placeholder="update email" formControlName="email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputUserType" class="lable-control">User Type</label>
+            <input type="text" class="form-control" id="exampleInputUserType" placeholder="update userType" formControlName="userType">
           </div>
           <button type="submit" class="btn btn-primary btn-ubdate-submuit">update</button>
         </div>

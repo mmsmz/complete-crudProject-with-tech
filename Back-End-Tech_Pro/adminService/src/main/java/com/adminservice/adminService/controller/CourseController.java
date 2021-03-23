@@ -7,14 +7,21 @@ import com.adminservice.adminService.util.AdminCommon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/adminService/Course")
+@CrossOrigin(origins = "*")
 public class CourseController {
 
     @Autowired
     private CourseService courseService;
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @ResponseBody
+    public String currentUserName(Authentication authentication) {
+        return authentication.getAuthorities().toString();
+    }
 
     @RequestMapping(name = "/addCourseDetails", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<ResponseDto> addCourseDetails(@RequestBody CourseDto courseDto){

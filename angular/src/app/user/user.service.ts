@@ -8,14 +8,13 @@ import { AppService } from '../app.service';
 })
 export class UserService {
 
-  constructor(private http : HttpClient, private appService :AppService) {
-   }
+  constructor(private http : HttpClient, private appService :AppService) { }
 
   addUser(data){
     let username = localStorage.getItem('username');
     let password = localStorage.getItem('password');
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username+":"+password)});
-    return this.http.post("http://localhost:8087/addUser",data , {headers}).pipe(
+    return this.http.post("http://localhost:8072/adminService/addUserDetails",data , {headers}).pipe(
       map((res:any)=> res));
   }
 
@@ -23,29 +22,22 @@ export class UserService {
     let username = localStorage.getItem('username');
     let password = localStorage.getItem('password');
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username+":"+password)});
-    return this.http.put("http://localhost:8087/updateUser",data,{headers}).pipe(
+    return this.http.put("http://localhost:8071/adminService/user/updateUser",data,{headers}).pipe(
       map((res:any)=> res));
   }
-
-  // public getAlluser(){
-  //   let username = 'foo';
-  //   let password = 'foo';
-  //   const headers = new HttpHeaders({Authorization: 'Basic ' +btoa(username+":"+password)});
-  //   return  this.http.get("http://localhost:8087/getAllUsers", {headers});
-  // }
 
   getAlluser(){
     let username = localStorage.getItem('username');
     let password = localStorage.getItem('password');
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username+":"+password)});
-    return this.http.get("http://localhost:8087/getAllUsers", {headers});
+    return this.http.get("http://localhost:8071/adminService/getAllUsers", {headers});
   }
 
   getUserById(data){
    let username = localStorage.getItem('username');
     let password = localStorage.getItem('password');
    const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username+":"+password)});
-    return this.http.get("http://localhost:8087/getUserById?userId="+data.userId, {headers}).pipe(
+    return this.http.get("http://localhost:8071/adminService/findByUserId?userId="+data.userId, {headers}).pipe(
       map((res:any)=> res));
   }
 
@@ -54,7 +46,7 @@ export class UserService {
     let username = localStorage.getItem('username');
     let password = localStorage.getItem('password');
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username+":"+password)});
-    return this.http.post("http://localhost:8087/deleteUser",userDeatails,{headers}).pipe(
+    return this.http.post("http://localhost:8072/deleteUser",userDeatails,{headers}).pipe(
       map((res:any)=> res));
   }
 

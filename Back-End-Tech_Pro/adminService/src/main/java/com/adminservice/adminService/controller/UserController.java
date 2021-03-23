@@ -7,11 +7,11 @@ import com.adminservice.adminService.util.AdminCommon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/adminService/User")
+@RequestMapping("adminService")
+@CrossOrigin(origins = "*")
 public class UserController {
 
    //Implementing the following APIs
@@ -25,7 +25,8 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(name = "/addUserDetails", method = RequestMethod.POST, produces = "application/json")
+    // @RequestMapping(name = "/addUserDetails", method = RequestMethod.POST, produces = "application/json")
+    @PostMapping(value = "/addUserDetails", produces = "application/json")
     public ResponseEntity<ResponseDto> addUserDetails(@RequestBody UserDto userDto){
 
         ResponseDto responseDto = new ResponseDto();
@@ -35,7 +36,8 @@ public class UserController {
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 
-    @RequestMapping(name = "/getAllUsers", method = RequestMethod.GET, produces = "application/json")
+//    @RequestMapping(name = "/getAllUsers", method = RequestMethod.GET, produces = "application/json")
+    @GetMapping(value = "/getAllUsers", produces = "application/json")
     public ResponseEntity<ResponseDto> getAllUsers(){
 
         ResponseDto responseDto = new ResponseDto();
