@@ -44,12 +44,15 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('password',this.password);
 
       if(result == "[ADMIN]"){
-        this.router.navigate(['/hom']);
+        localStorage.setItem('LoggedInUser',"admin");
+        this.router.navigate(['/admin']);
+        
       } else if(result == "[USER]"){ 
+        localStorage.setItem('LoggedInUser',"user");
+        this.router.navigate(['/user']);
         // this.router.navigate(['/manage']);
-      } else if(result == "general"){
-        // this.router.navigate(['/general'])
       }
+
       // if(result == "[ADMIN]"){
       //  this.router.navigate(['/admin-home']);
       // }
@@ -59,6 +62,7 @@ export class LoginComponent implements OnInit {
 
     }, () => {
       this.invalidLogin = true;
+      localStorage.setItem('LoggedInUser',"failed");
       this.loginSuccess = false;
     });      
   } 

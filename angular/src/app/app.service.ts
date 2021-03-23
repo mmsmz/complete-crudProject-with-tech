@@ -34,11 +34,13 @@ export class AppService {
    logout() {
     localStorage.removeItem("username");
     localStorage.removeItem("password");
+    localStorage.removeItem("LoggedInUser");
+
     // this.username = null;
     // this.password = null;
     
     this.router.navigateByUrl('/login');
-    debugger
+
    }
 
   isUserLoggedIn() {

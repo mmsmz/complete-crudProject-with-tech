@@ -30,6 +30,8 @@ import { CourseComponent } from './course/course.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
+  exports : [   AppComponent
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
