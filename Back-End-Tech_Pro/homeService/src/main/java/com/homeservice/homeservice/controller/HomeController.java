@@ -1,5 +1,6 @@
 package com.homeservice.homeservice.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.homeservice.homeservice.dto.ResponseDTO;
 import com.homeservice.homeservice.dto.UserDto;
 import com.homeservice.homeservice.service.HomeService;
@@ -39,7 +40,7 @@ public class HomeController {
 
     // emailService
     @PostMapping(value = "/register", produces = "application/json")
-    public ResponseEntity<ResponseDTO> register(@RequestBody UserDto userDto) {
+    public ResponseEntity<ResponseDTO> register(@RequestBody UserDto userDto) throws JsonProcessingException {
 
         ResponseDTO responseDto = new ResponseDTO();
         responseDto.setMessage(HomeConstant.SUCCESS);

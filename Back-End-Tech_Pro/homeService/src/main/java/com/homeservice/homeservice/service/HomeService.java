@@ -1,6 +1,7 @@
 package com.homeservice.homeservice.service;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.homeservice.homeservice.dto.CourseDTO;
 import com.homeservice.homeservice.dto.ImgLocationDTO;
 import com.homeservice.homeservice.dto.UserDto;
@@ -15,6 +16,6 @@ public interface HomeService {
 
     List<CourseDTO> getAllCourseList();
 
-    String register(UserDto userDto);
+    String register(UserDto userDto) throws JsonProcessingException;
 
 }
