@@ -1,6 +1,7 @@
 package com.homeservice.homeservice.controller;
 
 import com.homeservice.homeservice.dto.ResponseDTO;
+import com.homeservice.homeservice.dto.UserDto;
 import com.homeservice.homeservice.service.HomeService;
 import com.homeservice.homeservice.util.HomeConstant;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,15 @@ public class HomeController {
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
-    // email registration
+    // emailService
+    @PostMapping(value = "/register", produces = "application/json")
+    public ResponseEntity<ResponseDTO> register(@RequestBody UserDto userDto) {
+
+        ResponseDTO responseDto = new ResponseDTO();
+        responseDto.setMessage(HomeConstant.SUCCESS);
+        responseDto.setData(homeService.register(userDto));
+
+        return new ResponseEntity<>(responseDto, HttpStatus.OK);
+    }
 
 }
