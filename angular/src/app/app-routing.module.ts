@@ -12,10 +12,10 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent },
   {path: 'login', component: LoginComponent },
   {path: 'user', component: UserComponent },
-  // {path: 'course', component: CourseComponent },
-  // {path: 'usercoursedetails', component: UsercoursedetailsComponent}
+  {path: 'course', component: CourseComponent },
+  {path: 'usercoursedetails', component: UsercoursedetailsComponent} ,
 
-  { path: '', redirectTo : 'login', pathMatch:'full' },
+  // { path: '', redirectTo : 'login', pathMatch:'full' },
   { 
     path: 'admin', 
     loadChildren: () => import('./administration/administration.module').then(m => m.AdministrationModule) 

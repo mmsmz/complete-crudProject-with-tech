@@ -62,6 +62,8 @@ export class MenuComponent implements OnInit {
   }
   
   handleStudentCourseDetails(){
+
     this.router.navigateByUrl('/usercoursedetails');
+    
   }
 }
