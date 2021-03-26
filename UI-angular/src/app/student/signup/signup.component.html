@@ -1,2 +1,37 @@
 <app-menu></app-menu>
 <p>signup works!</p>
+
+
+<h1>Student  Details</h1>
+<div class="container">
+    <div class="row">
+        <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-inline">
+
+          <div class="form-group">
+            <label for="exampleInputUserId" class="lable-control">ID</label>
+            <input type="email" class="form-control-id" id="exampleInputUserId" placeholder="Id" formControlName="userId">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputUserName" class="lable-control">Student Name</label>
+            <input type="text" class="form-control" id="exampleInputUserName" placeholder="username" formControlName="userName">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputMobileNo" class="lable-control">Mobile No</label>
+            <input type="text" class="form-control" id="exampleInputMobileNo" placeholder="mobileno" formControlName="mobileNo">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail" class="lable-control">Email</label>
+            <input type="text" class="form-control" id="exampleInputEmail" placeholder="email" formControlName="email">
+          </div>
+        
+          <div class="form-group">
+            <label for="exampleInputPassword" class="lable-control">Password</label>
+            <input type="text" class="form-control" id="exampleInputPassword" placeholder="password" formControlName="password">
+          </div>
+
+          <button ng-click="onSubmit()" class="btn btn-primary">Submit</button>
+        
+        </form>     
+    </div>
+</div>
+  

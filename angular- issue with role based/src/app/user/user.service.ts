@@ -8,7 +8,7 @@ import { AppService } from '../app.service';
 })
 export class UserService {
 
-  constructor(private http : HttpClient, private appService :AppService) { }
+  constructor(private http : HttpClient) { }
 
   addUser(data){
     let username = localStorage.getItem('username');

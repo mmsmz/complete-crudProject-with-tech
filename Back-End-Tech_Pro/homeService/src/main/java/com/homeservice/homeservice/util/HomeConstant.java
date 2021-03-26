@@ -4,7 +4,7 @@ public interface HomeConstant {
 
     String SUCCESS = "Success";
 
-    String TYPE_STUDENT = "student";
+    String TYPE_STUDENT = "USER";
 
     Byte ACTIVATE = 1;
     Byte DEACTIVATE= 0;

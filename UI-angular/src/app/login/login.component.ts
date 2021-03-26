@@ -26,22 +26,26 @@ export class LoginComponent implements OnInit {
   }
 
   doLogin() {
- //   this.service.authenticationService(this.username, this.password) {
+    this.service.authenticationService(this.username, this.password).subscribe((result)=> {
       this.invalidLogin = false;
       this.loginSuccess = true;
-      
+      debugger
       this.successMessage = 'Login Successful.';
       localStorage.setItem('username',this.username);
       localStorage.setItem('password',this.password);
      
-
-      if(this.username == "admin"){
+      if(result == "[ADMIN]"){
         localStorage.setItem('LoggedInUser',"admin");
         this.router.navigateByUrl('/manage-user');
         
-      } else if(this.username == "user"){ 
+      } else if(result == "[USER]"){ 
         localStorage.setItem('LoggedInUser',"user");
         this.router.navigate(['/user']);
       }
-    }
+    },   () => {
+      this.invalidLogin = true;
+      localStorage.setItem('LoggedInUser',"failed");
+      this.loginSuccess = false;
+    });      
+  } 
 }

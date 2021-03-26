@@ -10,6 +10,8 @@ import { UserService } from './user.service';
 })
 
 export class UserComponent implements OnInit {
+
+  
   contactForm: FormGroup;
   updateUserDetails: FormGroup;
   updateUser: boolean =false;

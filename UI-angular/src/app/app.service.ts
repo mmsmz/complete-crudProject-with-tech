@@ -21,7 +21,8 @@ export class AppService {
   //   return  this.http.get("http://localhost:8087/", {headers, responseType: 'text' as 'json'});
   // }  
 
-  authenticationService(username: String, password: String) {    
+  authenticationService(username: String, password: String) {
+    debugger
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username+ ":" + password) });
     return  this.http.get("http://localhost:8071/", {headers, responseType: 'text' as 'json'});
   }
