@@ -20,7 +20,7 @@ export class MenuComponent implements OnInit {
     private authenticationService: AppService ) { }
 
   ngOnInit() {
-    this.checkingUserLogin();
+    // this.checkingUserLogin();
     this.isLoggedIn = this.authenticationService.isUserLoggedIn();
     console.log('menu ->' + this.isLoggedIn);
     
@@ -33,18 +33,19 @@ export class MenuComponent implements OnInit {
     // this.router.navigateByUrl('/login');
   }
 
-  checkingUserLogin(){
-    this.getLocatStorageItem = localStorage.getItem('LoggedInUser');
-    
-    if(this.getLocatStorageItem == "admin" ){
-        this.adminMenu = true;
-        this.userMenu = false;
-    }
-    else if(this.getLocatStorageItem == "user" ){
-      this.adminMenu =false;
-      this.userMenu = true;
-    }
-  }
+  // checkingUserLogin(){
+  //   this.getLocatStorageItem = localStorage.getItem('LoggedInUser');
+  //   debugger
+  //   if(this.getLocatStorageItem == "admin" ){
+      
+  //       this.adminMenu = true;
+  //       this.userMenu = false;
+  //   }
+  //   else if(this.getLocatStorageItem == "user" ){
+  //     this.adminMenu =false;
+  //     this.userMenu = true;
+  //   }
+  // }
 
   handleAdminStudent(){
       this.router.navigateByUrl('/admin-users');

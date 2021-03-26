@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit {
               private router : Router) { }
 
   ngOnInit(): void {
+
+    
   } 
 
   // doLogin(){
@@ -45,7 +47,7 @@ export class LoginComponent implements OnInit {
 
       if(result == "[ADMIN]"){
         localStorage.setItem('LoggedInUser',"admin");
-        this.router.navigateByUrl('/admin' );
+        this.router.navigateByUrl('/admin');
         
       } else if(result == "[USER]"){ 
         localStorage.setItem('LoggedInUser',"user");

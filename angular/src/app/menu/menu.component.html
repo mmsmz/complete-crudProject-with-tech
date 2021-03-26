@@ -3,12 +3,12 @@
       <a href="#" class="logo">Student Registration APP </a>
       <nav>
           <ul>
-            <ng-container *ngIf="adminMenu">
+            <ng-container>
               <li><a (click)="handleAdminStudent()">Ad User Details</a></li>
               <li><a (click)="handleAdminCourse()">Ad Course Details</a></li>
             </ng-container>
 
-            <ng-container *ngIf="userMenu">
+            <ng-container>
               <li><a (click)="handleStudent()">Student Details</a></li>
               <li><a (click)="handleCourse()">Course Details</a></li>
               <li><a (click)="handleStudentCourseDetails()">StudentCourseDetails</a></li>

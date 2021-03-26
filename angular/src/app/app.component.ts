@@ -7,5 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent  {
   title = 'my-app';
+
+  getLocatStorageItem: any;
+  adminMenu:boolean =false;
+  userMenu:boolean =false;
+
+  ngOnInit() {
+    this.getLocatStorageItem = localStorage.getItem('LoggedInUser');
+    debugger
+    if(this.getLocatStorageItem == "admin" ){
+    
+        this.adminMenu = true;
+        this.userMenu = false;
+    }
+  }
+
+
 }
 
