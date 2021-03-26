@@ -1,0 +1,41 @@
+     <!-- <div class="container">
+      <a href="#" class="logo">Student Registration APP </a>
+      <nav>
+          <ul>
+            <ng-container *ngIf="adminMenu">
+              <li><a (click)="handleAdminStudent()">Admin Details</a></li>
+            </ng-container>
+
+            <ng-container *ngIf="userMenu">
+              <li><a (click)="handleStudent()">User Details</a></li>
+            </ng-container>
+            
+            <ng-container *ngIf="dashboardMenu">
+            <li><a (click)="handleLogout()">Login / Logout</a></li>
+            </ng-container>
+          </ul>        
+      </nav>
+    </div>
+ -->
+
+ <nav>
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn">
+    <i class="fas fa-bars"></i>
+  </label>
+  <label class="logo">Student APP</label>
+  <ul>
+    <ng-container *ngIf="adminMenu">
+      <li><a (click)="handleAdminStudent()">Admin Details</a></li>
+    </ng-container>
+
+    <ng-container *ngIf="userMenu">
+      <li><a (click)="handleStudent()">User Details</a></li>
+    </ng-container>
+    
+    <ng-container *ngIf="dashboardMenu">
+    <li><a class="active" (click)="handleLogout()">Login / Logout</a></li>
+    </ng-container>
+    
+  </ul>
+</nav>
