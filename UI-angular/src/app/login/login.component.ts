@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
 
       if(this.username == "admin"){
         localStorage.setItem('LoggedInUser',"admin");
-        this.router.navigateByUrl('/admin');
+        this.router.navigateByUrl('/manage-user');
         
       } else if(this.username == "user"){ 
         localStorage.setItem('LoggedInUser',"user");

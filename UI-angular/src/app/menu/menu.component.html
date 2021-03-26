@@ -26,14 +26,21 @@
   <label class="logo">Student APP</label>
   <ul>
     <ng-container *ngIf="adminMenu">
-      <li><a (click)="handleAdminStudent()">Admin Details</a></li>
+      <!-- <li><a (click)="handleAdminStudent()">Admin Details</a></li> -->
+      <li><a routerLink="/manage-user">Manage Users</a></li>
+      <li><a routerLink="/manage-course">Manage Courses</a></li>
+      <li><a routerLink="/manage-user-course">Manage Both</a></li>
     </ng-container>
 
     <ng-container *ngIf="userMenu">
-      <li><a (click)="handleStudent()">User Details</a></li>
+      <li><a routerLink="/user">User Details</a></li>
+      <li><a routerLink="/course">course Details</a></li>
     </ng-container>
     
     <ng-container *ngIf="dashboardMenu">
+      <ng-container *ngIf="signup">
+    <li><a routerLink="/signup">SignUp</a></li>
+        </ng-container>
     <li><a class="active" (click)="handleLogout()">Login / Logout</a></li>
     </ng-container>
     

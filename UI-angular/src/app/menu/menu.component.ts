@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   adminMenu:boolean =false;
   userMenu:boolean =false;
   dashboardMenu: boolean = false;
-
+  signup : boolean = false;
 
   constructor(private router: Router,
     private authenticationService: AppService ) { }
@@ -38,27 +38,19 @@ export class MenuComponent implements OnInit {
       this.adminMenu =false;
       this.userMenu = true;
       this.dashboardMenu = true;
+      this.signup  = false;
     }
     else  {
       this.adminMenu =false;
       this.userMenu = false;
       this.dashboardMenu = true;
-      
+      this.signup  = true;
     }
     
   }
 
-  handleAdminStudent(){
-    this.router.navigateByUrl('/admin');
-  }
-
-  handleStudent(){
-    this.router.navigateByUrl('/user');
-  }
-
   handleLogout() {
-    this.authenticationService.logout();
-    
+    this.authenticationService.logout();    
     // this.router.navigateByUrl('/login');
   }
 }
