@@ -35,7 +35,7 @@ dependencies {
 	// cient is included in the MS
 	// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client
 //	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client'
-	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
 }
 
