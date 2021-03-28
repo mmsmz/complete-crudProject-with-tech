@@ -107,7 +107,7 @@ public class HomeServiceImpl implements HomeService {
 
 
             // enter the mail service Url (API)
-            String url = "http://localhost:8097/mailcontroller/send";
+            String url = "http://mail-service/mailcontroller/send";
             restTemplate.exchange(url, HttpMethod.POST, entity, String.class).getBody();
 
             return HomeConstant.SUCCESS;
