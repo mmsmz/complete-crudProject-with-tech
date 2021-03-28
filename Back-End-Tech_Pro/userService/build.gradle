@@ -28,8 +28,6 @@ dependencies {
 	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
 
 	implementation 'org.springframework.boot:spring-boot-starter-security'
-
-
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
 }
