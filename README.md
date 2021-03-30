@@ -19,6 +19,7 @@ B. Common Services
    -  GatewayService 
    -  EurekaSerivce 
    -  ConfigService 
+   -  MailService
 
 **Front-end ** : Angular
 
@@ -69,7 +70,8 @@ Requirements of Functionality
 
 Additional Technologies 
 ------------------------
-1. Service Discovery 
-2. API Gate way service
-3. JWT
-4. AUTH2
+1. Implemented Spring Security
+2. Implemennted Service Discovery
+3. API Gate way service
+4. JWT
+5. AUTH2
