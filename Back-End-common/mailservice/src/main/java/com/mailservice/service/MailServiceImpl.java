@@ -48,11 +48,6 @@ public class MailServiceImpl implements MailService {
 
         Multipart multipart = new MimeMultipart();
         multipart.addBodyPart(messageBodyPart);
-        MimeBodyPart attachPart = new MimeBodyPart();
-
-        attachPart.attachFile("C:\\imgLocation\\image.png");
-
-        multipart.addBodyPart(attachPart);
         msg.setContent(multipart);
         // sends the e-mail
         Transport.send(msg);
