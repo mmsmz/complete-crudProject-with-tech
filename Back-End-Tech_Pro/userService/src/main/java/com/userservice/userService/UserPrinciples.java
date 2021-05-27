@@ -19,7 +19,7 @@ public class UserPrinciples implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
-//        return Collections.singleton(new SimpleGrantedAuthority("ADMIN"));
+//      return Collections.singleton(new SimpleGrantedAuthority("ADMIN"));
         Collection<GrantedAuthority> authorities = new ArrayList<>();
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(userEntity.getUserType());
         authorities.add(authority);

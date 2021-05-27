@@ -59,7 +59,6 @@ public class UserServiceImpl implements UserService{
                 courseDto.setCoursePrice(users.getCoursePrice());
                 courseDto.setOrderStatus(users.getOrderStatus());
                 courseList.add(courseDto);
-
             }
         } catch (Exception e) {
             e.getMessage();
